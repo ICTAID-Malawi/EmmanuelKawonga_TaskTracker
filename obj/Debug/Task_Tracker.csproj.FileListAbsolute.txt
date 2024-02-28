@@ -1,0 +1,15 @@
+C:\Users\hp\Desktop\Important\TaskTracker\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\hp\Desktop\Important\TaskTracker\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\hp\Desktop\Important\TaskTracker\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\hp\Desktop\Important\TaskTracker\WindowsFormsApp1\obj\Debug\Task_Tracker.csproj.AssemblyReference.cache
+C:\Users\hp\Desktop\Important\TaskTracker\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.LoginForm.resources
+C:\Users\hp\Desktop\Important\TaskTracker\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.RegForm.resources
+C:\Users\hp\Desktop\Important\TaskTracker\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\hp\Desktop\Important\TaskTracker\WindowsFormsApp1\obj\Debug\Task_Tracker.csproj.GenerateResource.cache
+C:\Users\hp\Desktop\Important\TaskTracker\WindowsFormsApp1\obj\Debug\Task_Tracker.csproj.CoreCompileInputs.cache
+C:\Users\hp\Desktop\Important\TaskTracker\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\hp\Desktop\Important\TaskTracker\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\hp\Desktop\Important\TaskTracker\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.LandingPage.resources
+C:\Users\hp\Desktop\Important\TaskTracker\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ActivitiyPage.resources
+C:\Users\hp\Desktop\Important\TaskTracker\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.TaskPage.resources
+C:\Users\hp\Desktop\Important\TaskTracker\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Home.resources
