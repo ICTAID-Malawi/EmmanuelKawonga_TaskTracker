@@ -47,7 +47,7 @@
             this.button_register.TabIndex = 5;
             this.button_register.Text = "Register";
             this.button_register.UseVisualStyleBackColor = true;
-            this.button_register.Click += new System.EventHandler(this.button_register_Click);
+            this.button_register.Click += new System.EventHandler(this.Button_register_Click);
             // 
             // Password_textbox
             // 
@@ -101,7 +101,7 @@
             this.button_exit.TabIndex = 10;
             this.button_exit.Text = "X";
             this.button_exit.UseVisualStyleBackColor = false;
-            this.button_exit.Click += new System.EventHandler(this.button_exit_Click);
+            this.button_exit.Click += new System.EventHandler(this.Button_exit_Click);
             // 
             // RegForm
             // 

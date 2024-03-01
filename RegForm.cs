@@ -27,14 +27,14 @@ namespace WindowsFormsApp1
 
         }
 
-        private void button_exit_Click(object sender, EventArgs e)
+        private void Button_exit_Click(object sender, EventArgs e)
         {
             //closes window
             Application.Exit();
         }
 
 
-        private void button_register_Click(object sender, EventArgs e)
+        private void Button_register_Click(object sender, EventArgs e)
         {
             //validates textboxes entries before submitting to the database
 
