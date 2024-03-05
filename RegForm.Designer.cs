@@ -34,6 +34,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button_exit = new System.Windows.Forms.Button();
+            this.Lname_textbox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Fname_textbox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button_register
@@ -41,7 +45,7 @@
             this.button_register.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_register.Font = new System.Drawing.Font("Maiandra GD", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_register.ForeColor = System.Drawing.Color.White;
-            this.button_register.Location = new System.Drawing.Point(243, 321);
+            this.button_register.Location = new System.Drawing.Point(241, 470);
             this.button_register.Name = "button_register";
             this.button_register.Size = new System.Drawing.Size(259, 49);
             this.button_register.TabIndex = 5;
@@ -52,7 +56,7 @@
             // Password_textbox
             // 
             this.Password_textbox.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Password_textbox.Location = new System.Drawing.Point(211, 224);
+            this.Password_textbox.Location = new System.Drawing.Point(211, 398);
             this.Password_textbox.Multiline = true;
             this.Password_textbox.Name = "Password_textbox";
             this.Password_textbox.Size = new System.Drawing.Size(319, 33);
@@ -61,7 +65,7 @@
             // Email_textbox
             // 
             this.Email_textbox.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Email_textbox.Location = new System.Drawing.Point(211, 150);
+            this.Email_textbox.Location = new System.Drawing.Point(211, 328);
             this.Email_textbox.Multiline = true;
             this.Email_textbox.Name = "Email_textbox";
             this.Email_textbox.Size = new System.Drawing.Size(319, 33);
@@ -72,7 +76,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(88, 224);
+            this.label2.Location = new System.Drawing.Point(88, 407);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 24);
             this.label2.TabIndex = 9;
@@ -83,7 +87,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(88, 159);
+            this.label1.Location = new System.Drawing.Point(88, 331);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 24);
             this.label1.TabIndex = 8;
@@ -103,12 +107,58 @@
             this.button_exit.UseVisualStyleBackColor = false;
             this.button_exit.Click += new System.EventHandler(this.Button_exit_Click);
             // 
+            // Lname_textbox
+            // 
+            this.Lname_textbox.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lname_textbox.Location = new System.Drawing.Point(211, 261);
+            this.Lname_textbox.Multiline = true;
+            this.Lname_textbox.Name = "Lname_textbox";
+            this.Lname_textbox.Size = new System.Drawing.Size(319, 33);
+            this.Lname_textbox.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(88, 186);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 24);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "First name";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(85, 270);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(113, 24);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Last name ";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // Fname_textbox
+            // 
+            this.Fname_textbox.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Fname_textbox.Location = new System.Drawing.Point(211, 186);
+            this.Fname_textbox.Multiline = true;
+            this.Fname_textbox.Name = "Fname_textbox";
+            this.Fname_textbox.Size = new System.Drawing.Size(319, 33);
+            this.Fname_textbox.TabIndex = 15;
+            this.Fname_textbox.TextChanged += new System.EventHandler(this.Fname_textbox_TextChanged);
+            // 
             // RegForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LimeGreen;
-            this.ClientSize = new System.Drawing.Size(729, 450);
+            this.ClientSize = new System.Drawing.Size(729, 680);
+            this.Controls.Add(this.Fname_textbox);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.Lname_textbox);
             this.Controls.Add(this.button_exit);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -133,6 +183,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_exit;
+        private System.Windows.Forms.TextBox Lname_textbox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox Fname_textbox;
     }
 }
 

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button_register = new System.Windows.Forms.Button();
+            this.button_login = new System.Windows.Forms.Button();
             this.Password_textbox = new System.Windows.Forms.TextBox();
             this.Email_textbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,18 +37,18 @@
             this.label_reglink = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button_register
+            // button_login
             // 
-            this.button_register.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_register.Font = new System.Drawing.Font("Maiandra GD", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_register.ForeColor = System.Drawing.Color.White;
-            this.button_register.Location = new System.Drawing.Point(270, 278);
-            this.button_register.Name = "button_register";
-            this.button_register.Size = new System.Drawing.Size(259, 49);
-            this.button_register.TabIndex = 5;
-            this.button_register.Text = "Login";
-            this.button_register.UseVisualStyleBackColor = true;
-            this.button_register.Click += new System.EventHandler(this.button_register_Click);
+            this.button_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_login.Font = new System.Drawing.Font("Maiandra GD", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_login.ForeColor = System.Drawing.Color.White;
+            this.button_login.Location = new System.Drawing.Point(270, 278);
+            this.button_login.Name = "button_login";
+            this.button_login.Size = new System.Drawing.Size(259, 49);
+            this.button_login.TabIndex = 5;
+            this.button_login.Text = "Login";
+            this.button_login.UseVisualStyleBackColor = true;
+            this.button_login.Click += new System.EventHandler(this.button_login_Click);
             // 
             // Password_textbox
             // 
@@ -126,7 +126,7 @@
             this.Controls.Add(this.button_exit);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button_register);
+            this.Controls.Add(this.button_login);
             this.Controls.Add(this.Password_textbox);
             this.Controls.Add(this.Email_textbox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -140,7 +140,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button_register;
+        private System.Windows.Forms.Button button_login;
         private System.Windows.Forms.TextBox Password_textbox;
         private System.Windows.Forms.TextBox Email_textbox;
         private System.Windows.Forms.Label label1;

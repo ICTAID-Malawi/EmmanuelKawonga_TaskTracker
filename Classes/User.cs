@@ -1,9 +1,6 @@
-﻿using Npgsql;
+﻿using MySql.Data.MySqlClient;
+using Npgsql;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TaskTrackApp.Config;
 
 
@@ -14,34 +11,49 @@ namespace TaskTrackApp.Classes
         Dbconn connection = new Dbconn();
 
         //handles user registration
-        public bool Registration(string email, string password)
+        public bool Registration(string Firstname, string Lastname, string Email, string Password)
         {
-            NpgsqlCommand command = new NpgsqlCommand("INSERT INTO users_table (email,password) VALUES(@email, @password)", connection.GetNpgsqlConnection);
+            MySqlCommand command = new MySqlCommand("INSERT INTO users_table (`Firstname`,`Lastname`,`Email`,`Password`) VALUES(@firstname,@lastname,@email,@password)", connection.GetMySqlConnection);
 
+            command.Parameters.Add("@firstname",MySqlDbType.VarChar).Value = Firstname;
+            command.Parameters.Add("@lastname", MySqlDbType.VarChar).Value = Lastname;
+            command.Parameters.Add("@email", MySqlDbType.VarChar).Value = Email;
+            command.Parameters.Add("@password", MySqlDbType.VarChar).Value = Password;
 
-            command.Parameters.AddWithValue("@email", email);
-            command.Parameters.AddWithValue("@password", password);
-
-            connection.OpenConnection();
-            try
+            connection.openConnect();
+            if (command.ExecuteNonQuery() == 1)
             {
-                if (command.ExecuteNonQuery() == 1)
-                    return true;
-                else
-                    return false;
+                connection.closeConnect();
+                return true;
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-                return false;
-            }
-            finally
-            {
-                connection.CloseConnection();
-            }
+            else { connection.closeConnect(); return false; }
         }
+        //checks for existing email
+        public bool CheckExistingEmail(string Email) 
+        {
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `users_table` WHERE `Email` = '"+Email+"'",connection.GetMySqlConnection);
 
+            connection.openConnect();
+            int count = Convert.ToInt32(command.ExecuteScalar());
+            connection.closeConnect();
+            return count > 0;
+        }
+        //handles sign in
+        public bool SignIn(string Email, string Password) 
+        {
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `users_table` WHERE `Email` = @email AND `Password` = @password", connection.GetMySqlConnection);
 
+            command.Parameters.Add("@email",MySqlDbType.VarChar).Value = Email;
+            command.Parameters.Add("@password", MySqlDbType.VarChar).Value = Password;
+
+            connection.openConnect();
+            MySqlDataReader reader = command.ExecuteReader();
+            bool success = reader.HasRows;
+            reader.Close();
+            connection.closeConnect();
+
+            return success;
+        }
 
     }
 }
