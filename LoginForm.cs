@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaskTrackApp.Classes;
-using WindowsFormsApp1;
+using TaskTracker;
 
 namespace TaskTrackerApp
 {

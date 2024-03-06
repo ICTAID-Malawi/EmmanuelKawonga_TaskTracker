@@ -12,7 +12,7 @@ using TaskTrackApp.Classes;
 using TaskTrackerApp;
 using System.Diagnostics.Eventing.Reader;
 
-namespace WindowsFormsApp1
+namespace TaskTracker
 {
     public partial class RegForm : Form
     {
