@@ -68,6 +68,7 @@
     <Compile Include="ActivitiyPage.Designer.cs">
       <DependentUpon>ActivitiyPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Tasks.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Config\Dbconn.cs" />
     <Compile Include="LandingPage.cs">
