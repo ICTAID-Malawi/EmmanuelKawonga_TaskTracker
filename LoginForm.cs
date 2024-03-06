@@ -42,38 +42,72 @@ namespace TaskTrackerApp
             
         }
 
+        //private void button_login_Click(object sender, EventArgs e)
+        //{
+        //    if(Email_textbox.Text =="" && Password_textbox.Text == "") 
+        //    {
+        //        MessageBox.Show("Please fill in the field", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //    }
+        //    else
+        //    {
+        //        try
+        //        {
+        //            string Email = Email_textbox.Text;
+        //            string Password = Password_textbox.Text;
+
+        //            if(useraction.SignIn(Email, Password))
+        //            {
+        //                MessageBox.Show("Login Successful");
+        //                this.Hide();
+        //                LandingPage landingPage = new LandingPage();
+        //                landingPage.Show();
+        //            }
+        //            else { MessageBox.Show("Login Failed, check your credentials"); }
+        //        }
+        //        catch(Exception ex) { MessageBox.Show("Error" + ex); }
+        //    }
+        //}
+
+
+
+        //if it breaks its this part
         private void button_login_Click(object sender, EventArgs e)
         {
-            if(Email_textbox.Text =="" && Password_textbox.Text == "") 
+            if (string.IsNullOrWhiteSpace(Email_textbox.Text) || string.IsNullOrWhiteSpace(Password_textbox.Text))
             {
-                MessageBox.Show("Please fill in the field", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please fill in the fields", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            else
+            try
             {
-                try
-                {
-                    string Email = Email_textbox.Text;
-                    string Password = Password_textbox.Text;
+                string Email = Email_textbox.Text;
+                string Password = Password_textbox.Text;
 
-                    if(useraction.SignIn(Email, Password))
-                    {
-                        MessageBox.Show("Login Successful");
-                        this.Hide();
-                        LandingPage landingPage = new LandingPage();
-                        landingPage.Show();
-                    }
-                    else { MessageBox.Show("Login Failed, check your credentials"); }
+                // Check user credentials and obtain UserID
+                int User_id = useraction.ValidateUserCredentials(Email, Password);
+
+                if (User_id > 0)
+                {
+                    // Generate token
+                    string Token = useraction.GenerateToken(User_id);
+
+                    // Insert token into tokens table
+                    useraction.InsertToken(User_id, Token);
+
+                    MessageBox.Show("Login Successful");
+                    this.Hide();
+                    LandingPage landingPage = new LandingPage();
+                    landingPage.Show();
                 }
-                catch(Exception ex) { MessageBox.Show("Error" + ex); }
+                else
+                {
+                    MessageBox.Show("Login Failed, check your credentials");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        //void loginformstyle() 
-        //{
-        //    Height = 450;
-        //    Width = 729;
-        //    FormBorderStyle = FormBorderStyle.None;
-        //    BackColor = Color.White;
-        //}
     }
 }
