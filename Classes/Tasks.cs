@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using TaskTrackApp.Classes;
 using TaskTrackApp.Config;
 
 
@@ -14,21 +17,42 @@ namespace TaskTracker.Classes
         Dbconn connection = new Dbconn();
 
         //method used to save tasks
-        public bool Save_task(string Taskname, string Description, string Status, string StartDate, string CompleteDate)
+        public bool Save_task(string Taskname, string Description, string Status, DateTime StartDate, DateTime CompleteDate, int User_id)
         {
-            MySqlCommand command = new MySqlCommand("INSERT INTO taskstable (`TaskName`,`Description`,`Status`,`StartDate`,`CompletionDate`) VALUES(@taskname,@description,@status,@startdate,@completiondate)");
+            MySqlCommand command = new MySqlCommand("INSERT INTO taskstable (`TaskName`,`Description`,`Status`,`StartDate`,`CompletionDate`,`User_id`) VALUES(@taskname,@description,@status,@startdate,@completiondate,@userid)",connection.GetMySqlConnection);
             command.Parameters.Add("@taskname",MySqlDbType.VarChar).Value = Taskname;
             command.Parameters.Add("@description", MySqlDbType.VarChar).Value = Description;
             command.Parameters.Add("@status", MySqlDbType.VarChar).Value = Status;
-            command.Parameters.Add("@startdate", MySqlDbType.VarChar).Value = StartDate;
-            command.Parameters.Add("@completiondate", MySqlDbType.VarChar).Value = CompleteDate;
+            command.Parameters.Add("@startdate", MySqlDbType.DateTime).Value = StartDate;
+            command.Parameters.Add("@completiondate", MySqlDbType.DateTime).Value = CompleteDate;
+            command.Parameters.Add("@userid", MySqlDbType.Int32).Value = User_id;
+
             connection.openConnect();
-            if(command.ExecuteNonQuery() == 1)
+            if (command.ExecuteNonQuery() == 1)
             {
                 connection.closeConnect();
                 return true;
             }
-            else { connection.closeConnect();return false; }
+            else { connection.closeConnect(); return false; }
+        }
+
+        //fetch tasks
+        public DataTable fetch_tasks(MySqlCommand command)
+        {
+            try
+            {
+                command.Connection = connection.GetMySqlConnection;
+                MySqlDataAdapter Adapter = new MySqlDataAdapter(command);
+                DataTable table = new DataTable();
+                Adapter.Fill(table);
+                return table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+
         }
     }
 }

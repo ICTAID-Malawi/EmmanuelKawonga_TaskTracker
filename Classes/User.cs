@@ -1,7 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
 using Npgsql;
 using System;
+using System.Data;
 using TaskTrackApp.Config;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 namespace TaskTrackApp.Classes
@@ -93,6 +95,24 @@ namespace TaskTrackApp.Classes
             connection.openConnect();
             command.ExecuteNonQuery();
             connection.closeConnect();
+        }
+
+        //-------------------------------------------------------------------
+        //Get profile
+        public DataTable GetUserProfile(string Email)
+        {
+            MySqlCommand command = new MySqlCommand("SELECT DISTINCT Email FROM users_table", connection.GetMySqlConnection);
+
+            command.Parameters.Add("@email", MySqlDbType.VarChar).Value =Email;
+
+            MySqlDataAdapter Adapter = new MySqlDataAdapter(command);
+            DataTable profile = new DataTable();
+
+            connection.openConnect();
+            Adapter.Fill(profile);
+            connection.closeConnect();
+
+            return profile;
         }
     }
 }

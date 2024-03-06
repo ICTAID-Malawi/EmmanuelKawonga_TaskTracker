@@ -62,52 +62,61 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActivitiyPage.cs">
+    <Compile Include="Forms\ActivitiyPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ActivitiyPage.Designer.cs">
+    <Compile Include="Forms\ActivitiyPage.Designer.cs">
       <DependentUpon>ActivitiyPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Tasks.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Config\Dbconn.cs" />
-    <Compile Include="LandingPage.cs">
+    <Compile Include="Forms\LandingPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LandingPage.Designer.cs">
+    <Compile Include="Forms\LandingPage.Designer.cs">
       <DependentUpon>LandingPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegForm.cs">
+    <Compile Include="Forms\RegForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegForm.Designer.cs">
+    <Compile Include="Forms\RegForm.Designer.cs">
       <DependentUpon>RegForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Taskentryform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Taskentryform.Designer.cs">
+      <DependentUpon>Taskentryform.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TaskPage.cs">
+    <Compile Include="Forms\TaskPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TaskPage.Designer.cs">
+    <Compile Include="Forms\TaskPage.Designer.cs">
       <DependentUpon>TaskPage.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ActivitiyPage.resx">
+    <EmbeddedResource Include="Forms\ActivitiyPage.resx">
       <DependentUpon>ActivitiyPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LandingPage.resx">
+    <EmbeddedResource Include="Forms\LandingPage.resx">
       <DependentUpon>LandingPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegForm.resx">
+    <EmbeddedResource Include="Forms\RegForm.resx">
       <DependentUpon>RegForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Taskentryform.resx">
+      <DependentUpon>Taskentryform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -118,7 +127,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TaskPage.resx">
+    <EmbeddedResource Include="Forms\TaskPage.resx">
       <DependentUpon>TaskPage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -135,5 +144,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

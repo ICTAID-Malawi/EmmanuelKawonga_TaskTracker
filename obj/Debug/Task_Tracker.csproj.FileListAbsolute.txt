@@ -88,7 +88,6 @@ C:\Users\hp\source\repos\obj\Debug\Task_Tracker.csproj.AssemblyReference.cache
 C:\Users\hp\source\repos\obj\Debug\TaskTrackerApp.ActivitiyPage.resources
 C:\Users\hp\source\repos\obj\Debug\TaskTrackerApp.LandingPage.resources
 C:\Users\hp\source\repos\obj\Debug\TaskTrackerApp.LoginForm.resources
-C:\Users\hp\source\repos\obj\Debug\WindowsFormsApp1.RegForm.resources
 C:\Users\hp\source\repos\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
 C:\Users\hp\source\repos\obj\Debug\TaskTrackerApp.TaskPage.resources
 C:\Users\hp\source\repos\obj\Debug\Task_Tracker.csproj.GenerateResource.cache
@@ -96,3 +95,5 @@ C:\Users\hp\source\repos\obj\Debug\Task_Tracker.csproj.CoreCompileInputs.cache
 C:\Users\hp\source\repos\obj\Debug\Task_Tracker.csproj.CopyComplete
 C:\Users\hp\source\repos\obj\Debug\WindowsFormsApp1.exe
 C:\Users\hp\source\repos\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\hp\source\repos\obj\Debug\TaskTracker.RegForm.resources
+C:\Users\hp\source\repos\obj\Debug\WindowsFormsApp1.Forms.Taskentryform.resources
