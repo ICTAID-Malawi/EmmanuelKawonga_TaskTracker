@@ -34,11 +34,22 @@ namespace TaskTrackerApp
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow viewRow = this.dataGridView1.Rows[e.RowIndex];
+            
+        }
 
+        private void button_delete_Click(object sender, EventArgs e)
+        {
+            int TaskNumber = int.Parse(alabel_id.Text);
+
+            try 
+            {
+                if (sometask.Delete_task(TaskNumber))
+                {
+                    MessageBox.Show("Task removed");
+                    view_the_tasks();
+                }
             }
+            catch(Exception ex) { MessageBox.Show("Something went wrong" + ex); }
         }
     }
 }

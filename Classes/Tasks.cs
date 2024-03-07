@@ -35,6 +35,20 @@ namespace TaskTracker.Classes
             }
             else { connection.closeConnect(); return false; }
         }
+        //method to delete tasks
+        public bool Delete_task(int TaskNumber)
+        {
+            MySqlCommand command = new MySqlCommand("DELETE FROM `taskstable` WHERE `TaskNumber` = @tasknumber", connection.GetMySqlConnection);
+            command.Parameters.Add("@tasknumber",MySqlDbType.Int32).Value=TaskNumber;
+
+            connection.openConnect();
+            if (command.ExecuteNonQuery() == 1)
+            {
+                connection.closeConnect();
+                return true;
+            }
+            else { connection.closeConnect(); return false; }
+        }
 
         //fetch tasks
         public DataTable fetch_tasks(MySqlCommand command)

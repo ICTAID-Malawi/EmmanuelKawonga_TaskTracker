@@ -17,7 +17,6 @@ C:\Users\hp\Source\Repos\EmmanuelKawonga_TaskTracker\obj\Debug\Task_Tracker.cspr
 C:\Users\hp\Source\Repos\EmmanuelKawonga_TaskTracker\obj\Debug\TaskTrackerApp.ActivitiyPage.resources
 C:\Users\hp\Source\Repos\EmmanuelKawonga_TaskTracker\obj\Debug\TaskTrackerApp.LandingPage.resources
 C:\Users\hp\Source\Repos\EmmanuelKawonga_TaskTracker\obj\Debug\TaskTrackerApp.LoginForm.resources
-C:\Users\hp\Source\Repos\EmmanuelKawonga_TaskTracker\obj\Debug\WindowsFormsApp1.RegForm.resources
 C:\Users\hp\Source\Repos\EmmanuelKawonga_TaskTracker\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
 C:\Users\hp\Source\Repos\EmmanuelKawonga_TaskTracker\obj\Debug\TaskTrackerApp.TaskPage.resources
 C:\Users\hp\Source\Repos\EmmanuelKawonga_TaskTracker\obj\Debug\Task_Tracker.csproj.GenerateResource.cache
@@ -97,3 +96,15 @@ C:\Users\hp\source\repos\obj\Debug\WindowsFormsApp1.exe
 C:\Users\hp\source\repos\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\hp\source\repos\obj\Debug\TaskTracker.RegForm.resources
 C:\Users\hp\source\repos\obj\Debug\WindowsFormsApp1.Forms.Taskentryform.resources
+C:\Users\hp\Source\Repos\EmmanuelKawonga_TaskTracker\bin\Debug\MySql.Data.dll
+C:\Users\hp\Source\Repos\EmmanuelKawonga_TaskTracker\bin\Debug\Google.Protobuf.dll
+C:\Users\hp\Source\Repos\EmmanuelKawonga_TaskTracker\bin\Debug\ZstdNet.dll
+C:\Users\hp\Source\Repos\EmmanuelKawonga_TaskTracker\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\hp\Source\Repos\EmmanuelKawonga_TaskTracker\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\hp\Source\Repos\EmmanuelKawonga_TaskTracker\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\hp\Source\Repos\EmmanuelKawonga_TaskTracker\bin\Debug\System.Buffers.dll
+C:\Users\hp\Source\Repos\EmmanuelKawonga_TaskTracker\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\hp\Source\Repos\EmmanuelKawonga_TaskTracker\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\hp\Source\Repos\EmmanuelKawonga_TaskTracker\bin\Debug\MySql.Data.xml
+C:\Users\hp\Source\Repos\EmmanuelKawonga_TaskTracker\obj\Debug\TaskTracker.RegForm.resources
+C:\Users\hp\Source\Repos\EmmanuelKawonga_TaskTracker\obj\Debug\WindowsFormsApp1.Forms.Taskentryform.resources
