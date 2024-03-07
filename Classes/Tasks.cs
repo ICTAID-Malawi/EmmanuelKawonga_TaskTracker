@@ -17,14 +17,14 @@ namespace TaskTracker.Classes
         Dbconn connection = new Dbconn();
 
         //method used to save tasks
-        public bool Save_task(string Taskname, string Description, string Status, DateTime StartDate, DateTime CompleteDate, int User_id)
+        public bool Save_task(string Taskname, string Description, string Status, DateTime StartDate, DateTime CompletionDate, int User_id)
         {
             MySqlCommand command = new MySqlCommand("INSERT INTO taskstable (`TaskName`,`Description`,`Status`,`StartDate`,`CompletionDate`,`User_id`) VALUES(@taskname,@description,@status,@startdate,@completiondate,@userid)",connection.GetMySqlConnection);
             command.Parameters.Add("@taskname",MySqlDbType.VarChar).Value = Taskname;
             command.Parameters.Add("@description", MySqlDbType.VarChar).Value = Description;
             command.Parameters.Add("@status", MySqlDbType.VarChar).Value = Status;
             command.Parameters.Add("@startdate", MySqlDbType.DateTime).Value = StartDate;
-            command.Parameters.Add("@completiondate", MySqlDbType.DateTime).Value = CompleteDate;
+            command.Parameters.Add("@completiondate", MySqlDbType.DateTime).Value = CompletionDate;
             command.Parameters.Add("@userid", MySqlDbType.Int32).Value = User_id;
 
             connection.openConnect();
@@ -38,9 +38,9 @@ namespace TaskTracker.Classes
         //method to delete tasks
         public bool Delete_task(int TaskNumber)
         {
-            MySqlCommand command = new MySqlCommand("DELETE FROM `taskstable` WHERE `TaskNumber` = @tasknumber", connection.GetMySqlConnection);
+            MySqlCommand command = new MySqlCommand("DELETE FROM `taskstable` WHERE TaskNumber = @tasknumber", connection.GetMySqlConnection);
             command.Parameters.Add("@tasknumber",MySqlDbType.Int32).Value=TaskNumber;
-
+            
             connection.openConnect();
             if (command.ExecuteNonQuery() == 1)
             {
@@ -51,7 +51,7 @@ namespace TaskTracker.Classes
         }
 
         //fetch tasks
-        public DataTable fetch_tasks(MySqlCommand command)
+        public DataTable Fetch_tasks(MySqlCommand command)
         {
             try
             {

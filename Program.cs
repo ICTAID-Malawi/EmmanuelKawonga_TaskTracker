@@ -17,7 +17,7 @@ namespace TaskTrackerApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TaskPage());
+            Application.Run(new LandingPage());
         }
     }
 }
