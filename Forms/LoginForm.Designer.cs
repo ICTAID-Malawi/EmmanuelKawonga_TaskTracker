@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.button_login = new System.Windows.Forms.Button();
             this.Password_textbox = new System.Windows.Forms.TextBox();
             this.Email_textbox = new System.Windows.Forms.TextBox();
@@ -35,25 +36,29 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button_exit = new System.Windows.Forms.Button();
             this.label_reglink = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button_login
             // 
+            this.button_login.BackColor = System.Drawing.Color.White;
             this.button_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_login.Font = new System.Drawing.Font("Maiandra GD", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_login.ForeColor = System.Drawing.Color.White;
-            this.button_login.Location = new System.Drawing.Point(270, 278);
+            this.button_login.ForeColor = System.Drawing.Color.Black;
+            this.button_login.Location = new System.Drawing.Point(250, 397);
             this.button_login.Name = "button_login";
             this.button_login.Size = new System.Drawing.Size(259, 49);
             this.button_login.TabIndex = 5;
             this.button_login.Text = "Login";
-            this.button_login.UseVisualStyleBackColor = true;
+            this.button_login.UseVisualStyleBackColor = false;
             this.button_login.Click += new System.EventHandler(this.button_login_Click);
             // 
             // Password_textbox
             // 
             this.Password_textbox.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Password_textbox.Location = new System.Drawing.Point(252, 212);
+            this.Password_textbox.Location = new System.Drawing.Point(230, 321);
             this.Password_textbox.Multiline = true;
             this.Password_textbox.Name = "Password_textbox";
             this.Password_textbox.Size = new System.Drawing.Size(319, 33);
@@ -62,7 +67,7 @@
             // Email_textbox
             // 
             this.Email_textbox.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Email_textbox.Location = new System.Drawing.Point(252, 129);
+            this.Email_textbox.Location = new System.Drawing.Point(230, 237);
             this.Email_textbox.Multiline = true;
             this.Email_textbox.Name = "Email_textbox";
             this.Email_textbox.Size = new System.Drawing.Size(319, 33);
@@ -72,8 +77,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(131, 138);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(104, 240);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 24);
             this.label1.TabIndex = 6;
@@ -83,8 +88,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(131, 221);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(104, 330);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 24);
             this.label2.TabIndex = 7;
@@ -108,20 +113,42 @@
             // 
             this.label_reglink.AutoSize = true;
             this.label_reglink.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_reglink.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label_reglink.Location = new System.Drawing.Point(300, 366);
+            this.label_reglink.ForeColor = System.Drawing.Color.Red;
+            this.label_reglink.Location = new System.Drawing.Point(385, 469);
             this.label_reglink.Name = "label_reglink";
-            this.label_reglink.Size = new System.Drawing.Size(189, 24);
+            this.label_reglink.Size = new System.Drawing.Size(124, 24);
             this.label_reglink.TabIndex = 12;
-            this.label_reglink.Text = "Click here to register";
+            this.label_reglink.Text = "Register now";
             this.label_reglink.Click += new System.EventHandler(this.labelreglink_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Maiandra GD", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(180, 471);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(199, 21);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Don\'t have an account ?";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(44, 59);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(588, 139);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LimeGreen;
-            this.ClientSize = new System.Drawing.Size(729, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(729, 659);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label_reglink);
             this.Controls.Add(this.button_exit);
             this.Controls.Add(this.label2);
@@ -133,6 +160,7 @@
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,5 +175,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button_exit;
         private System.Windows.Forms.Label label_reglink;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

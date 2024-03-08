@@ -35,6 +35,27 @@ namespace TaskTracker.Classes
             }
             else { connection.closeConnect(); return false; }
         }
+        //method to update tasks
+        public bool Update_task( int TaskNumber, string Taskname, string Description, string Status, DateTime StartDate, DateTime CompletionDate, int User_id)
+        {
+            MySqlCommand command = new MySqlCommand("", connection.GetMySqlConnection);
+            command.Parameters.Add("@tasknumber",MySqlDbType.Int32).Value = TaskNumber;
+            command.Parameters.Add("@taskname", MySqlDbType.VarChar).Value = Taskname;
+            command.Parameters.Add("@description", MySqlDbType.VarChar).Value = Description;
+            command.Parameters.Add("@status", MySqlDbType.VarChar).Value = Status;
+            command.Parameters.Add("@startdate", MySqlDbType.DateTime).Value = StartDate;
+            command.Parameters.Add("@completiondate", MySqlDbType.DateTime).Value = CompletionDate;
+            command.Parameters.Add("@userid", MySqlDbType.Int32).Value = User_id;
+
+            connection.openConnect();
+            if (command.ExecuteNonQuery() == 1)
+            {
+                connection.closeConnect();
+                return true;
+            }
+            else { connection.closeConnect(); return false; }
+        }
+
         //method to delete tasks
         public bool Delete_task(int TaskNumber)
         {
