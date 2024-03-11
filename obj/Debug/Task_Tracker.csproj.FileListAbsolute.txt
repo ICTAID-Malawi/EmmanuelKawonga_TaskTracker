@@ -176,3 +176,8 @@ C:\Users\hp\Desktop\TaskTracker\obj\Debug\Task_Tracker.csproj.CoreCompileInputs.
 C:\Users\hp\Desktop\TaskTracker\obj\Debug\Task_Tracker.csproj.CopyComplete
 C:\Users\hp\Desktop\TaskTracker\obj\Debug\WindowsFormsApp1.exe
 C:\Users\hp\Desktop\TaskTracker\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\hp\Desktop\TaskTracker\bin\Debug\MailKit.dll
+C:\Users\hp\Desktop\TaskTracker\bin\Debug\MimeKit.dll
+C:\Users\hp\Desktop\TaskTracker\bin\Debug\MailKit.xml
+C:\Users\hp\Desktop\TaskTracker\bin\Debug\MimeKit.xml
+C:\Users\hp\Desktop\TaskTracker\obj\Debug\WindowsFormsApp1.Forms.VerificationForm.resources

@@ -2,8 +2,12 @@
 using Npgsql;
 using System;
 using System.Data;
+using System.Net.Mail;
 using TaskTrackApp.Config;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using MailKit.Net.Smtp;
+using MailKit;
+using MimeKit;
+
 
 
 namespace TaskTrackApp.Classes
@@ -114,5 +118,50 @@ namespace TaskTrackApp.Classes
 
             return profile;
         }
+        // generate random code
+        // Generate and save random 5-digit code
+        public string GenerateAndSaveCode()
+        {
+            // Generate random 5-digit code
+            Random random = new Random();
+            int Code = random.Next(10000, 99999);
+
+            // Save code to database
+            MySqlCommand command = new MySqlCommand("INSERT INTO codes (Code) VALUES (@code)", connection.GetMySqlConnection);
+            command.Parameters.AddWithValue("@code", Code);
+
+            connection.openConnect();
+            command.ExecuteNonQuery();
+            connection.closeConnect();
+
+            //return the generate code
+            return Code.ToString();
+        }
+       //The real nonsense 
+        public void SendVerificationEmail(string userEmail)
+        {
+            var message = new MimeMessage();
+            message.From.Add(new MailboxAddress("Emmanuel Kawonga", "kawongaemmanuel3@gmail.com"));
+            message.To.Add(new MailboxAddress("ungwerukawonga@gmail.com", userEmail)); // Set the recipient email
+            message.Subject = "Verification Code";
+
+            // Generate the body of the email containing the random code
+            string verificationCode = GenerateAndSaveCode(); // Implement this method
+            message.Body = new TextPart("plain")
+            {
+                Text = $"Your verification code is: {verificationCode}"
+            };
+
+            // Send email using SMTP
+            using (var client = new MailKit.Net.Smtp.SmtpClient())
+            {
+                client.Connect("smtp.gmail.com", 587, false); // SMTP server details
+                client.Authenticate("kawongaemmanuel3@gmail.com", "ugzu wntl kzll niwb"); // SMTP authentication
+                client.Send(message);
+                client.Disconnect(true);
+            }
+        }
+
+
     }
 }

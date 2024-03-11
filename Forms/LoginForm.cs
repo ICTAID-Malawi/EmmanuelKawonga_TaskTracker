@@ -109,5 +109,10 @@ namespace TaskTrackerApp
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void LoginForm_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

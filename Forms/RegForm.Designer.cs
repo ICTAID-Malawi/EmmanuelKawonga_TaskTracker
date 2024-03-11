@@ -75,6 +75,7 @@
             this.Email_textbox.Name = "Email_textbox";
             this.Email_textbox.Size = new System.Drawing.Size(319, 33);
             this.Email_textbox.TabIndex = 3;
+            this.Email_textbox.TextChanged += new System.EventHandler(this.Email_textbox_TextChanged);
             // 
             // label2
             // 
