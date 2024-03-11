@@ -19,7 +19,7 @@ namespace TaskTracker.Classes
         //method used to save tasks
         public bool Save_task(string Taskname, string Description, string Status, DateTime StartDate, DateTime CompletionDate, int User_id)
         {
-            MySqlCommand command = new MySqlCommand("INSERT INTO taskstable (`TaskName`,`Description`,`Status`,`StartDate`,`CompletionDate`,`User_id`) VALUES(@taskname,@description,@status,@startdate,@completiondate,@userid)",connection.GetMySqlConnection);
+            MySqlCommand command = new MySqlCommand("INSERT INTO taskstable (`Taskname`,`Description`,`Status`,`StartDate`,`CompletionDate`,`User_id`) VALUES(@taskname,@description,@status,@startdate,@completiondate,@userid)",connection.GetMySqlConnection);
             command.Parameters.Add("@taskname",MySqlDbType.VarChar).Value = Taskname;
             command.Parameters.Add("@description", MySqlDbType.VarChar).Value = Description;
             command.Parameters.Add("@status", MySqlDbType.VarChar).Value = Status;
@@ -38,7 +38,7 @@ namespace TaskTracker.Classes
         //method to update tasks
         public bool Update_task( int TaskNumber, string Taskname, string Description, string Status, DateTime StartDate, DateTime CompletionDate, int User_id)
         {
-            MySqlCommand command = new MySqlCommand("", connection.GetMySqlConnection);
+            MySqlCommand command = new MySqlCommand("UPDATE taskstable SET TaskName = @taskname, Description = @description, Status = @status, StartDate = @startdate, CompletionDate = @completiondate WHERE TaskNumber = @tasknumber", connection.GetMySqlConnection);
             command.Parameters.Add("@tasknumber",MySqlDbType.Int32).Value = TaskNumber;
             command.Parameters.Add("@taskname", MySqlDbType.VarChar).Value = Taskname;
             command.Parameters.Add("@description", MySqlDbType.VarChar).Value = Description;

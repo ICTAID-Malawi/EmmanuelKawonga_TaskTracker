@@ -40,6 +40,7 @@
             this.StartDate_Picker = new System.Windows.Forms.DateTimePicker();
             this.Desc_richTextBox = new System.Windows.Forms.RichTextBox();
             this.Taskname_textbox = new System.Windows.Forms.TextBox();
+            this.button_update = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,6 +106,7 @@
             this.label_id.Size = new System.Drawing.Size(55, 16);
             this.label_id.TabIndex = 7;
             this.label_id.Text = "label_id";
+            this.label_id.Visible = false;
             this.label_id.Click += new System.EventHandler(this.alabel_id_Click);
             // 
             // button_committ
@@ -170,12 +172,25 @@
             this.Taskname_textbox.Size = new System.Drawing.Size(319, 33);
             this.Taskname_textbox.TabIndex = 24;
             // 
+            // button_update
+            // 
+            this.button_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_update.Font = new System.Drawing.Font("Maiandra GD", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_update.Location = new System.Drawing.Point(501, 399);
+            this.button_update.Name = "button_update";
+            this.button_update.Size = new System.Drawing.Size(123, 39);
+            this.button_update.TabIndex = 30;
+            this.button_update.Text = "Change";
+            this.button_update.UseVisualStyleBackColor = true;
+            this.button_update.Click += new System.EventHandler(this.button_update_Click);
+            // 
             // TaskPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1127, 548);
+            this.Controls.Add(this.button_update);
             this.Controls.Add(this.button_committ);
             this.Controls.Add(this.CompletionDate_Picker);
             this.Controls.Add(this.Status_comboBox);
@@ -208,5 +223,6 @@
         private System.Windows.Forms.DateTimePicker StartDate_Picker;
         private System.Windows.Forms.RichTextBox Desc_richTextBox;
         private System.Windows.Forms.TextBox Taskname_textbox;
+        private System.Windows.Forms.Button button_update;
     }
 }

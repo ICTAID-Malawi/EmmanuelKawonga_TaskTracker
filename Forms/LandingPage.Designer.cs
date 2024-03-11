@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LandingPage));
             this.Side_panel = new System.Windows.Forms.Panel();
             this.to_activites_button = new System.Windows.Forms.Button();
             this.to_tasks_button = new System.Windows.Forms.Button();
@@ -48,11 +47,9 @@
             this.label_date = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label_user = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Side_panel.SuspendLayout();
             this.mainpanel.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Side_panel
@@ -255,7 +252,7 @@
             this.label_date.AutoSize = true;
             this.label_date.Font = new System.Drawing.Font("Maiandra GD", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_date.ForeColor = System.Drawing.Color.Green;
-            this.label_date.Location = new System.Drawing.Point(590, 20);
+            this.label_date.Location = new System.Drawing.Point(101, 20);
             this.label_date.Name = "label_date";
             this.label_date.Size = new System.Drawing.Size(146, 27);
             this.label_date.TabIndex = 1;
@@ -266,12 +263,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label_user);
             this.panel1.Controls.Add(this.label_date);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(146, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1273, 64);
+            this.panel1.Size = new System.Drawing.Size(1127, 64);
             this.panel1.TabIndex = 11;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -280,23 +276,12 @@
             this.label_user.AutoSize = true;
             this.label_user.Font = new System.Drawing.Font("Maiandra GD", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_user.ForeColor = System.Drawing.Color.Green;
-            this.label_user.Location = new System.Drawing.Point(985, 20);
+            this.label_user.Location = new System.Drawing.Point(951, 20);
             this.label_user.Name = "label_user";
             this.label_user.Size = new System.Drawing.Size(60, 27);
             this.label_user.TabIndex = 2;
             this.label_user.Text = "User";
             this.label_user.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(208, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // LandingPage
             // 
@@ -317,7 +302,6 @@
             this.mainpanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -343,6 +327,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_user;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
