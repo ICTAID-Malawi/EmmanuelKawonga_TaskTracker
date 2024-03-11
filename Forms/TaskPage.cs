@@ -144,31 +144,30 @@ namespace TaskTrackerApp
 
         private void button_update_Click(object sender, EventArgs e)
         {
-            //string Taskname = Taskname_textbox.Text;
-            //string Description = Desc_richTextBox.Text;
-            //string Status = Status_comboBox.GetItemText(Status_comboBox.SelectedItem);
-            //DateTime StartDate = StartDate_Picker.Value.Date;
-            //DateTime CompletionDate = CompletionDate_Picker.Value.Date;
+            int TaskNumber = Convert.ToInt32(label_id.Text);
+            string Taskname = Taskname_textbox.Text;
+            string Description = Desc_richTextBox.Text;
+            string Status = Status_comboBox.GetItemText(Status_comboBox.SelectedItem);
+            DateTime StartDate = StartDate_Picker.Value.Date;
+            DateTime CompletionDate = CompletionDate_Picker.Value.Date;
+           //int User_id = Convert.ToInt32(label2.Text);
+            try
+            {
 
-            //try
-            //{
-            //    // Assuming you have the task ID available
-            //    int TaskNumber = selectedTaskID;
-
-            //    if (sometask.Update_task(TaskNumber, Taskname, Description, Status, StartDate, CompletionDate))
-            //    {
-            //        MessageBox.Show("Your Task has been updated");
-            //        View_the_tasks();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Failed to update task");
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+                if (sometask.Update_task(TaskNumber, Taskname, Description, Status, StartDate, CompletionDate))
+                {
+                    MessageBox.Show("Your Task has been updated");
+                    View_the_tasks();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update task");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
 
         }

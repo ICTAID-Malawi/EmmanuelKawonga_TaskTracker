@@ -36,7 +36,7 @@ namespace TaskTracker.Classes
             else { connection.closeConnect(); return false; }
         }
         //method to update tasks
-        public bool Update_task( int TaskNumber, string Taskname, string Description, string Status, DateTime StartDate, DateTime CompletionDate, int User_id)
+        public bool Update_task( int TaskNumber, string Taskname, string Description, string Status, DateTime StartDate, DateTime CompletionDate)
         {
             MySqlCommand command = new MySqlCommand("UPDATE taskstable SET TaskName = @taskname, Description = @description, Status = @status, StartDate = @startdate, CompletionDate = @completiondate WHERE TaskNumber = @tasknumber", connection.GetMySqlConnection);
             command.Parameters.Add("@tasknumber",MySqlDbType.Int32).Value = TaskNumber;
@@ -45,7 +45,7 @@ namespace TaskTracker.Classes
             command.Parameters.Add("@status", MySqlDbType.VarChar).Value = Status;
             command.Parameters.Add("@startdate", MySqlDbType.DateTime).Value = StartDate;
             command.Parameters.Add("@completiondate", MySqlDbType.DateTime).Value = CompletionDate;
-            command.Parameters.Add("@userid", MySqlDbType.Int32).Value = User_id;
+          //command.Parameters.Add("@userid", MySqlDbType.Int32).Value = User_id;
 
             connection.openConnect();
             if (command.ExecuteNonQuery() == 1)

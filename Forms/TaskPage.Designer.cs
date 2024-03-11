@@ -41,6 +41,7 @@
             this.Desc_richTextBox = new System.Windows.Forms.RichTextBox();
             this.Taskname_textbox = new System.Windows.Forms.TextBox();
             this.button_update = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,12 +185,23 @@
             this.button_update.UseVisualStyleBackColor = true;
             this.button_update.Click += new System.EventHandler(this.button_update_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(245, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 16);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "label2";
+            this.label2.Visible = false;
+            // 
             // TaskPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1127, 548);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button_update);
             this.Controls.Add(this.button_committ);
             this.Controls.Add(this.CompletionDate_Picker);
@@ -224,5 +236,6 @@
         private System.Windows.Forms.RichTextBox Desc_richTextBox;
         private System.Windows.Forms.TextBox Taskname_textbox;
         private System.Windows.Forms.Button button_update;
+        private System.Windows.Forms.Label label2;
     }
 }
