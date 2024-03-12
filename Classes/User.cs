@@ -100,6 +100,34 @@ namespace TaskTrackApp.Classes
             command.ExecuteNonQuery();
             connection.closeConnect();
         }
+        //Get token
+        public string GetToken(int User_id)
+        {
+            MySqlCommand command = new MySqlCommand("SELECT Token FROM Tokens WHERE User_id = @userid", connection.GetMySqlConnection);
+            command.Parameters.AddWithValue("@userid", User_id);
+
+            connection.openConnect();
+            string token = command.ExecuteScalar()?.ToString(); // ExecuteScalar is used assuming there's only one token per user
+            connection.closeConnect();
+
+            return token;
+        }
+        //more nonsense
+
+        public bool ValidateToken(int User_id, string token)
+        {
+            // Query the database to check if the token is valid for the given user
+            MySqlCommand command = new MySqlCommand("SELECT COUNT(*) FROM Tokens WHERE User_id = @userId AND Token = @token", connection.GetMySqlConnection);
+            command.Parameters.AddWithValue("@userId", User_id);
+            command.Parameters.AddWithValue("@token", token);
+
+            connection.openConnect();
+            int count = Convert.ToInt32(command.ExecuteScalar());
+            connection.closeConnect();
+
+            return count > 0;
+        }
+
 
         //-------------------------------------------------------------------
         //Get profile
@@ -120,15 +148,16 @@ namespace TaskTrackApp.Classes
         }
         // generate random code
         // Generate and save random 5-digit code
-        public string GenerateAndSaveCode()
+        public string GenerateAndSaveCode(string userEmail)
         {
             // Generate random 5-digit code
             Random random = new Random();
             int Code = random.Next(10000, 99999);
 
             // Save code to database
-            MySqlCommand command = new MySqlCommand("INSERT INTO codes (Code) VALUES (@code)", connection.GetMySqlConnection);
+            MySqlCommand command = new MySqlCommand("INSERT INTO codes (Code,Email) VALUES (@code,@email)", connection.GetMySqlConnection);
             command.Parameters.AddWithValue("@code", Code);
+            command.Parameters.AddWithValue("@email", userEmail);
 
             connection.openConnect();
             command.ExecuteNonQuery();
@@ -146,7 +175,7 @@ namespace TaskTrackApp.Classes
             message.Subject = "Verification Code";
 
             // Generate the body of the email containing the random code
-            string verificationCode = GenerateAndSaveCode(); // Implement this method
+            string verificationCode = GenerateAndSaveCode(userEmail); // Implement this method
             message.Body = new TextPart("plain")
             {
                 Text = $"Your verification code is: {verificationCode}"
@@ -159,6 +188,29 @@ namespace TaskTrackApp.Classes
                 client.Authenticate("kawongaemmanuel3@gmail.com", "ugzu wntl kzll niwb"); // SMTP authentication
                 client.Send(message);
                 client.Disconnect(true);
+            }
+        }
+        //This method checks if the entered verification code matches the one saved in the database for the given email.
+        public bool ValidateVerificationCode(string userEmail, string enteredCode)
+        {
+            // Retrieve the verification code from the database for the given email
+            MySqlCommand command = new MySqlCommand("SELECT DISTINCT Code FROM codes WHERE Email = @email", connection.GetMySqlConnection);
+            command.Parameters.AddWithValue("@email", userEmail);
+
+            connection.openConnect();
+            object result = command.ExecuteScalar();
+            connection.closeConnect();
+
+            if (result != null)
+            {
+                // Compare the entered code with the retrieved code
+                int savedCode = Convert.ToInt32(result);
+                return savedCode == Convert.ToInt32(enteredCode);
+            }
+            else
+            {
+                // No verification code found for the given email
+                return false;
             }
         }
 

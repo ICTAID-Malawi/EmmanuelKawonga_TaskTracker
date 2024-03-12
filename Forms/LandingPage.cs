@@ -115,5 +115,10 @@ namespace TaskTrackerApp
         {
 
         }
+
+        private void label_user_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -282,6 +282,7 @@
             this.label_user.TabIndex = 2;
             this.label_user.Text = "User";
             this.label_user.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label_user.Click += new System.EventHandler(this.label_user_Click);
             // 
             // LandingPage
             // 

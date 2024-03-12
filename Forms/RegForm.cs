@@ -136,6 +136,40 @@ namespace TaskTracker
             }
 
             // Attempt registration
+            //try
+            //{
+            //    string Firstname = Fname_textbox.Text;
+            //    string Lastname = Lname_textbox.Text;
+            //    string Email = Email_textbox.Text;
+            //    string Password = Password_textbox.Text;
+
+            //    // Register user
+            //    if (useractions.Registration(Firstname, Lastname, Email, Password))
+            //    {
+            //        MessageBox.Show("Registration successful. Please check your email for the verification code.");
+
+            //        // Send verification email
+            //        useractions.SendVerificationEmail(Email);
+
+            //        // Show verification form
+            //        VerificationForm verificationForm = new VerificationForm();
+            //        string verificationCode = useractions.GenerateAndSaveCode(); // You need to generate the verification code here
+            //        verificationForm.SetUserDetails(Email_textbox.Text, verificationCode); // Pass user email and verification code
+            //        verificationForm.Show();
+
+            //        this.Hide(); // Hide the registration form
+            //        LoginForm loginForm = new LoginForm();
+            //        loginForm.Show();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Registration failed");
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
             try
             {
                 string Firstname = Fname_textbox.Text;
@@ -151,10 +185,12 @@ namespace TaskTracker
                     // Send verification email
                     useractions.SendVerificationEmail(Email);
 
+                    // Generate and save verification code
+                    string verificationCode = useractions.GenerateAndSaveCode(Email);
+
                     // Show verification form
                     VerificationForm verificationForm = new VerificationForm();
-                    string verificationCode = useractions.GenerateAndSaveCode(); // You need to generate the verification code here
-                    verificationForm.SetUserDetails(Email_textbox.Text, verificationCode); // Pass user email and verification code
+                    //verificationForm.SetUserDetails(Email_textbox.Text, verificationCode); // If unnecessary, remove this line
                     verificationForm.Show();
 
                     this.Hide(); // Hide the registration form
@@ -170,6 +206,8 @@ namespace TaskTracker
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+
         }
 
 
